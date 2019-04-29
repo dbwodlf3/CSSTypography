@@ -1,0 +1,21 @@
+/* Layouts */
+#indexFlexWrapper{
+    display:flex;
+    flex-flow: column wrap;
+    align-items:center;
+    min-height:100%;
+}
+
+#indexHeader{
+    flex: 1 1 0;
+}
+
+#indexcontent{
+    flex: 10 1 0;
+}
+
+#indexFooter{
+    flex: 1 1 0;
+}
+
+/* */

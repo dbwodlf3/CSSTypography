@@ -1,21 +1,46 @@
-/* Layouts */
+/*** basics ***/
+*{
+    margin:0;
+    padding:0;
+}
+
+/*** Layouts ***/
+/* index */
 #indexFlexWrapper{
     display:flex;
     flex-flow: column wrap;
     align-items:center;
     min-height:100%;
+    min-width:100%;
 }
 
 #indexHeader{
-    flex: 1 1 0;
+    flex: 0 0 100px;
 }
 
 #indexcontent{
-    flex: 10 1 0;
+    flex: 10 0 0;
 }
 
 #indexFooter{
-    flex: 1 1 0;
+    flex: 0 0 100px;
 }
 
-/* */
+/* cards */
+.cardFlexWrapper{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    width:100%;
+}
+
+.card1{
+    flex: 0 0 300px;
+    width:300px;
+    height:300px;
+}
+
+.emptyCell{
+    width:300px;
+    height:300px;
+}

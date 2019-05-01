@@ -1,14 +1,14 @@
 {% load static %}
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
-    <script type="text/javascript" href="{% static "js/index.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/index.js" %}"></script>
 </head>
 <div id="indexFlexWrapper">
     <div id="indexHeader">
         헤더부분입니다.
     </div>
     <div id="indexContent">
-        본문입니다.
+        {% include "contents/homeCards.html"%}
     </div>
     <div id="indexFooter">
         꼬리부분입니다.

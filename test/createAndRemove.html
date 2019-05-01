@@ -1,0 +1,38 @@
+<div id="wrapper">
+</div>
+
+<script type="text/javascript">
+//create
+var tempArray = [];
+
+//생성
+var tempElement;
+
+var Target = document.getElementById("wrapper")
+for(var i=0;i<5;i++){
+    tempElement = document.createElement("div");
+    tempElement.className = "good";
+    tempArray.push(tempElement);
+}
+
+for(var i=0;i<5;i++){
+    Target.appendChild(tempArray[i]);
+}
+
+//remove
+removeTarget = document.getElementsByClassName("good");
+for(var i=0;i<removeTarget.length;i++){
+    removeTarget[i].remove()
+    i--; // here is point. i--.
+}
+</script>
+
+
+<style>
+    .good{
+        height:100px;
+        width:100px;
+        background-color:brown;;
+        margin:10px;
+    }
+</style>

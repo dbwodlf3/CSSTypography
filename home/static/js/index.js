@@ -17,7 +17,7 @@ function makeEmptyCell (event){
 
     //생성 & 삽입구.
     var tempArray = []
-    if(n != lineItemMaximum && n != NaN){
+    if(n != lineItemMaximum && n != NaN && itemNumbers > lineItemMaximum){
         var target = document.getElementsByClassName("cardFlexWrapper")[0];
         for(var i=0;i<n;i++){
             var tempElement =document.createElement("div",{"class":"emptyCell"});
@@ -28,6 +28,9 @@ function makeEmptyCell (event){
         for(var i=0;i<n;i++){
             target.appendChild(tempArray[i]);
         }
+        //test
+        //var testMessage = `한 줄에 있을 수 있는 아이템의 개수 : ${lineItemMaximum} \n존재하는 아이템의 개수 : ${itemNumbers} \n마지막줄의 아이템 개수: ${lastLineItemNumbers}\n 생성될 EmptyCell의 개수: ${n}`
+        //alert(testMessage);
     }
 
 }

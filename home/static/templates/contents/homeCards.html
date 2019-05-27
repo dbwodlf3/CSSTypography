@@ -19,8 +19,10 @@
     </div>
 </div>
 
-<style>
-    .card1{
-        background-color: aqua;
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = ()=>{
+        console.log(xhttp.response)
     }
-</style>
+    xhttp.open("GET", "./api/contentList/")
+</script>

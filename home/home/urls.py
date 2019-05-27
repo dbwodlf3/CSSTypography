@@ -5,6 +5,7 @@ from django.contrib.staticfiles import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('viewer.urls')),
+    path('api/', include('api.urls')),
 ]
 
 urlpatterns += [

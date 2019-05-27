@@ -32,7 +32,6 @@ function makeEmptyCell (event){
         //var testMessage = `한 줄에 있을 수 있는 아이템의 개수 : ${lineItemMaximum} \n존재하는 아이템의 개수 : ${itemNumbers} \n마지막줄의 아이템 개수: ${lastLineItemNumbers}\n 생성될 EmptyCell의 개수: ${n}`
         //alert(testMessage);
     }
-
 }
 window.onload = makeEmptyCell;
 window.onresize = makeEmptyCell;

@@ -1,28 +1,37 @@
 <div class="cardFlexWrapper">
-    <div class="card1">
-        card1
-    </div>
-
-    <div class="card1">
-        card2
-    </div>
-
-    <div class="card1">
-        card3
-    </div>
-
-    <div class="card1">
-        card4
-    </div>
-    <div class="card1">
-        card5
-    </div>
 </div>
 
 <script>
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = ()=>{
-        console.log(xhttp.response)
+    function createCards(a){
+        var tempElement;
+        var wrapperElement = document.getElementsByClassName("cardFlexWrapper")[0]
+        var cardWrapper = document.getElementById("cardFlexWrapper");
+        alert(wrapperElement);
+
+        for(var i=0; i < a["contents"].length; i++){
+            tempElement = document.createElement("div")
+            tempElement.className="card1"
+            tempElement.innerHTML = a["contents"][i][0]
+            wrapperElement.appendChild(tempElement);
+        }
     }
-    xhttp.open("GET", "./api/contentList/")
+
+    (function (){
+        function ajax(method, url, callback){
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.onload = function(){
+                if (xhr.status === 200){
+                    callback.call(this, xhr.responseText);
+                }
+            }
+            xhr.send();
+        }
+
+        //creating Cards
+        ajax("GET", "/api/contentList/", function(response){
+            response = JSON.parse(response);
+            createCards(response)
+        })
+    }());
 </script>

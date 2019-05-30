@@ -6,12 +6,11 @@
         var tempElement;
         var wrapperElement = document.getElementsByClassName("cardFlexWrapper")[0]
         var cardWrapper = document.getElementById("cardFlexWrapper");
-        alert(wrapperElement);
 
         for(var i=0; i < a["contents"].length; i++){
             tempElement = document.createElement("div")
             tempElement.className="card1"
-            tempElement.innerHTML = a["contents"][i][0]
+            tempElement.innerHTML = `<a href=\"/examples/${a["contents"][i][0].slice(0,-5)}\">${a["contents"][i][0]}</a>`
             wrapperElement.appendChild(tempElement);
         }
     }
@@ -31,7 +30,8 @@
         //creating Cards
         ajax("GET", "/api/contentList/", function(response){
             response = JSON.parse(response);
-            createCards(response)
+            createCards(response);
+            makeEmptyCell(); // 콘텐츠가 추가되고, 레이아웃을 한번 정렬해줌.
         })
     }());
 </script>
